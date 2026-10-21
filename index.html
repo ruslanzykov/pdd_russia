@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ПДД — тренажёр по темам</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <!-- Экран 1: выбор темы -->
+    <section id="screen-start" class="screen active">
+      <h1>Тренажёр ПДД</h1>
+      <label>Категория:
+        <select id="category">
+          <option value="A_B">A, B</option>
+          <option value="C_D">C, D</option>
+        </select>
+      </label>
+      <label>Тема:
+        <select id="topic">
+          <option value="">— загрузка тем… —</option>
+        </select>
+      </label>
+      <button id="start-btn" disabled>Начать тренировку</button>
+    </section>
+
+    <!-- Экран 2: вопросы -->
+    <section id="screen-quiz" class="screen">
+      <header class="quiz-header">
+        <div id="progress">Вопрос 1 / 1</div>
+        <div class="score">
+          <span class="ok">✔ <span id="score-ok">0</span></span>
+          <span class="bad">✘ <span id="score-bad">0</span></span>
+        </div>
+      </header>
+
+      <div id="question-block">
+        <img id="q-image" alt="" hidden>
+        <p id="q-text"></p>
+        <div id="answers"></div>
+      </div>
+
+      <div id="hint" class="hint" hidden></div>
+      <button id="next-btn" disabled>Дальше →</button>
+    </section>
+
+    <!-- Экран 3: результат -->
+    <section id="screen-result" class="screen">
+      <h2>Тренировка завершена</h2>
+      <p id="result-text"></p>
+      <button id="restart-btn">Ещё раз</button>
+      <button id="to-topics-btn">К выбору темы</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
